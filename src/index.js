@@ -4,11 +4,11 @@
  * @param config - private student ability to perform for different focus modes
  * @returns number of weeks needed for finish education
  */
-module.exports = function getTimeForEducation(
-    focus = 'family', 
-    knowsProgramming = true,
-    config = {family: 4}
-    ) {
-      return 0;
-  };
-  
+module.exports = function getTimeForEducation(preferences, knowsProgramming, config) {
+        if (knowsProgramming===true) {
+            return Math.ceil(800/config[preferences]);
+        } else {
+            return Math.ceil(1300/config[preferences]);
+        }
+};
+
